@@ -14,7 +14,6 @@ namespace TelCoColorCoder
     const int numberOfMinorColors =
         sizeof(MinorColorNames) / sizeof(MinorColorNames[0]);
 
-    // ColorPair class method definitions
     ColorPair::ColorPair(MajorColor major, MinorColor minor):
         majorColor(major), minorColor(minor)
     {}
@@ -34,7 +33,6 @@ namespace TelCoColorCoder
         return colorPairStr;
     }
 
-    // Utility function definitions
     ColorPair GetColorFromPairNumber(int pairNumber) {
         int zeroBasedPairNumber = pairNumber - 1;
         MajorColor majorColor =
