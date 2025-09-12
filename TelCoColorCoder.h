@@ -23,10 +23,8 @@ namespace TelCoColorCoder
             MinorColor getMinor();
             std::string ToString();
     };
-
-    // Utility functions
     ColorPair GetColorFromPairNumber(int pairNumber);
     int GetPairNumberFromColor(MajorColor major, MinorColor minor);
 }
 
-#endif // TEL_CO_COLOR_CODER_H
+#endif 
