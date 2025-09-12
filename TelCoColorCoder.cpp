@@ -1,16 +1,50 @@
-#ifndef TEST_TEL_CO_COLOR_CODER_H
-#define TEST_TEL_CO_COLOR_CODER_H
+#include "TelCoColorCoder.h" // Include its own header
+#include <iostream>          // For std::cout (though not strictly necessary for functions here, often used for debugging/internal prints)
 
-#include "TelCoColorCoder.h" // Need access to the ColorCoder types
+namespace TelCoColorCoder
+{
+    const char* MajorColorNames[] = {
+        "White", "Red", "Black", "Yellow", "Violet"
+    };
+    const int numberOfMajorColors =
+        sizeof(MajorColorNames) / sizeof(MajorColorNames[0]);
+    const char* MinorColorNames[] = {
+        "Blue", "Orange", "Green", "Brown", "Slate"
+    };
+    const int numberOfMinorColors =
+        sizeof(MinorColorNames) / sizeof(MinorColorNames[0]);
 
-// Function declarations for testing
-void testNumberToPair(int pairNumber,
-    TelCoColorCoder::MajorColor expectedMajor,
-    TelCoColorCoder::MinorColor expectedMinor);
+    // ColorPair class method definitions
+    ColorPair::ColorPair(MajorColor major, MinorColor minor):
+        majorColor(major), minorColor(minor)
+    {}
 
-void testPairToNumber(
-    TelCoColorCoder::MajorColor major,
-    TelCoColorCoder::MinorColor minor,
-    int expectedPairNumber);
+    MajorColor ColorPair::getMajor() {
+        return majorColor;
+    }
 
-#endif // TEST_TEL_CO_COLOR_CODER_H
+    MinorColor ColorPair::getMinor() {
+        return minorColor;
+    }
+
+    std::string ColorPair::ToString() {
+        std::string colorPairStr = MajorColorNames[majorColor];
+        colorPairStr += " ";
+        colorPairStr += MinorColorNames[minorColor];
+        return colorPairStr;
+    }
+
+    // Utility function definitions
+    ColorPair GetColorFromPairNumber(int pairNumber) {
+        int zeroBasedPairNumber = pairNumber - 1;
+        MajorColor majorColor =
+            (MajorColor)(zeroBasedPairNumber / numberOfMinorColors);
+        MinorColor minorColor =
+            (MinorColor)(zeroBasedPairNumber % numberOfMinorColors);
+        return ColorPair(majorColor, minorColor);
+    }
+
+    int GetPairNumberFromColor(MajorColor major, MinorColor minor) {
+        return major * numberOfMinorColors + minor + 1;
+    }
+}
