@@ -1,5 +1,5 @@
-#include "TelCoColorCoder.h" // Include its own header
-#include <iostream>          // For std::cout (though not strictly necessary for functions here, often used for debugging/internal prints)
+#include "TelCoColorCoder.h" 
+#include <iostream>          
 
 namespace TelCoColorCoder
 {
