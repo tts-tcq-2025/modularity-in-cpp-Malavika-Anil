@@ -1,8 +1,7 @@
-#include "test_TelCoColorCoder.h" // Include its own header
-#include <iostream>              // For std::cout
-#include <assert.h>              // For assert
+#include "test_TelCoColorCoder.h" 
+#include <iostream>              
+#include <assert.h>              
 
-// Function definitions for testing
 void testNumberToPair(int pairNumber,
     TelCoColorCoder::MajorColor expectedMajor,
     TelCoColorCoder::MinorColor expectedMinor)
