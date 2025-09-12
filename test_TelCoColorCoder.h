@@ -1,9 +1,8 @@
 #ifndef TEST_TEL_CO_COLOR_CODER_H
 #define TEST_TEL_CO_COLOR_CODER_H
 
-#include "TelCoColorCoder.h" // Need access to the ColorCoder types
+#include "TelCoColorCoder.h" 
 
-// Function declarations for testing
 void testNumberToPair(int pairNumber,
     TelCoColorCoder::MajorColor expectedMajor,
     TelCoColorCoder::MinorColor expectedMinor);
@@ -13,4 +12,4 @@ void testPairToNumber(
     TelCoColorCoder::MinorColor minor,
     int expectedPairNumber);
 
-#endif // TEST_TEL_CO_COLOR_CODER_H
+#endif 
